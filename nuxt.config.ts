@@ -1,5 +1,5 @@
-import { pwa } from './config/pwa'
-import { appDescription } from './constants/index'
+import { pwa } from './config/pwa';
+import { appDescription } from './constants/index';
 
 export default defineNuxtConfig({
   modules: [
@@ -19,9 +19,7 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
+  css: ['@unocss/reset/tailwind.css'],
 
   colorMode: {
     classSuffix: '',
@@ -51,7 +49,10 @@ export default defineNuxtConfig({
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent',
+        },
       ],
     },
   },
@@ -61,4 +62,4 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-})
+});
