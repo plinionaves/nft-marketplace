@@ -1,16 +1,8 @@
 <script setup lang="ts">
   import { ethers, parseUnits, BrowserProvider } from 'ethers';
-  import { create as ipfsHttpClient } from 'ipfs-http-client';
   import Web3Modal from 'web3modal';
   import { marketplaceAddress } from '../web3/config';
   import NFTMarketplace from '../web3/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json';
-
-  const client = ipfsHttpClient({
-    url: 'https://ipfs.infura.io:5001/api/v0',
-    headers: {
-      authorization: 'Basic ' + btoa('apiKey' + ':' + 'apiSecret'),
-    },
-  });
   const router = useRouter();
   const fileUrl = ref('');
   const form = reactive({ price: '', name: '', description: '' });
@@ -22,11 +14,16 @@
 
       if (!file) return;
 
-      const added = await client.add(file, {
-        progress: (prog) => console.log(`received: ${prog}`),
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const res = await useFetch('/api/upload/file', {
+        method: 'POST',
+        body: formData,
       });
+      const added = res.data.value;
       console.log('added file', added);
-      const url = `https://ipfs.io/ipfs/${added.path}`;
+      const url = `https://ipfs.io/ipfs/${added?.path}`;
 
       fileUrl.value = url;
     } catch (error) {
@@ -37,11 +34,16 @@
   async function uploadToIPFS() {
     const { name, description, price } = form;
     if (!name || !description || !price || !fileUrl.value) return;
-    /* first, upload metadata to IPFS */
-    const data = JSON.stringify({ name, description, image: fileUrl.value });
+
     try {
-      const added = await client.add(data);
-      const url = `https://ipfs.io/ipfs/${added.path}`;
+      const data = { name, description, image: fileUrl.value };
+      const res = await useFetch('/api/upload/data', {
+        method: 'POST',
+        body: data,
+      });
+      const added = res.data.value;
+      console.log('added data', added);
+      const url = `https://ipfs.io/ipfs/${added?.path}`;
       /* after metadata is uploaded to IPFS, return the URL to use it in the transaction */
       return url;
     } catch (error) {
