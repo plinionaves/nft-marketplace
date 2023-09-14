@@ -1,8 +1,8 @@
-import process from 'node:process'
-import type { ModuleOptions } from '@vite-pwa/nuxt'
-import { appDescription, appName } from '../constants/index'
+import process from 'node:process';
+import type { ModuleOptions } from '@vite-pwa/nuxt';
+import { appDescription, appName } from '../constants/index';
 
-const scope = '/'
+const scope = '/';
 
 export const pwa: ModuleOptions = {
   registerType: 'autoUpdate',
@@ -76,4 +76,4 @@ export const pwa: ModuleOptions = {
     enabled: process.env.VITE_PLUGIN_PWA === 'true',
     navigateFallback: scope,
   },
-}
+};
