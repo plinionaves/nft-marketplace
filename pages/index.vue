@@ -27,7 +27,7 @@
 
   async function loadNFTs() {
     /* create a generic provider and query for unsold market items */
-    const provider = new JsonRpcProvider();
+    const provider = new JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
     const contract = new ethers.Contract(
       marketplaceAddress,
       NFTMarketplace.abi,
