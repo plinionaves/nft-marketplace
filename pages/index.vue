@@ -115,7 +115,7 @@
               </div>
             </div>
             <div class="p-4 bg-black">
-              <p class="text-2xl font-bold text-white">{{ nft.price }} ETH</p>
+              <p class="text-2xl font-bold text-white">{{ nft.price }} MATIC</p>
               <button
                 class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
                 @click="buyNft(nft)"

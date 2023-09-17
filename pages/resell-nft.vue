@@ -48,7 +48,7 @@
   <div class="flex justify-center">
     <div class="w-1/2 flex flex-col pb-12">
       <input
-        placeholder="Asset Price in Eth"
+        placeholder="Asset Price in MATIC"
         class="mt-2 border rounded p-4 color-neutral"
         v-model="form.price"
       />

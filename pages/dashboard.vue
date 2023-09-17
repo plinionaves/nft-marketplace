@@ -63,7 +63,7 @@
         <img :src="nft.image" class="rounded" />
         <div class="mt-auto p-4 bg-black">
           <p class="text-2xl font-bold text-white">
-            Price - {{ nft.price }} Eth
+            Price - {{ nft.price }} MATIC
           </p>
         </div>
       </div>
