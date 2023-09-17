@@ -8,9 +8,9 @@ Simple NFT Marketplace to learn about Smart Contracts, NFTs and Blockchain.
 
 ### Smart Contract
 
-- [Contract Address](https://mumbai.polygonscan.com/address/0xba4c129487c04964a73f9655ceb0b90815f53e42)
+- [Contract Address](https://mumbai.polygonscan.com/address/0xE8Bc31bE4eF3C2c4130D94Dc94abC084E3A34eCf)
 
-- [First Transaction](https://mumbai.polygonscan.com/tx/0xe35f6df32a74dd0d63c831df688330ac8eaec91373707eef94955e91e9224b75)
+- [First Transaction](https://mumbai.polygonscan.com/tx/0xae13c6bba6b32576b2c7779c9032abfdb691059c30aee0ed0ac255211dde7c29)
 
 ### Infos
 
