@@ -2,6 +2,7 @@
   "private": true,
   "packageManager": "pnpm@8.7.0",
   "scripts": {
+    "prebuild": "pnpm run web3:compile",
     "build": "nuxi build",
     "dev": "nuxi dev",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
@@ -10,7 +11,8 @@
     "lint": "eslint .",
     "postinstall": "nuxi prepare",
     "generate": "nuxi generate",
-    "start:generate": "npx serve .output/public"
+    "start:generate": "npx serve .output/public",
+    "web3:compile": "cd web3 && hardhat clean && hardhat compile"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
