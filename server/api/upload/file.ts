@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  if (file.data.length > 0.5 * 1024 * 1024) {
+  if (file.data.length > 5 * 1024 * 1024) {
     throw createError({
       statusCode: 400,
       message: 'File size must be less than 5MB',
