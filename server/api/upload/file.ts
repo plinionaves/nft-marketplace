@@ -4,7 +4,7 @@ import { StorageData, client } from './data';
 
 export default defineEventHandler(async (event) => {
   const files = await readFiles(event);
-  const file = files?.file?.[0];
+  const file = files.file[0];
 
   if (!file) {
     throw new Error('No file');
